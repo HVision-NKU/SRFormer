@@ -1,0 +1,91 @@
+name: SRFormer_DF2k_X3
+suffix: ~  # add suffix to saved images
+model_type: SRModel
+scale: 3
+num_gpu: 2  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+
+datasets:
+  test_1:  # the 1st test dataset
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: ./datasets/Set5/HR/x3
+    dataroot_lq: ./datasets/Set5/LR/LRBI/x3
+    io_backend:
+      type: disk
+  test_2: # the 2st test dataset
+    name: Set14
+    type: PairedImageDataset
+    dataroot_gt: ./datasets/Set14/HR/x3
+    dataroot_lq: ./datasets/Set14/LR/LRBI/x3
+    io_backend:
+      type: disk
+  test_3: # the 3st test dataset
+    name: B100
+    type: PairedImageDataset
+    dataroot_gt:  ./datasets/B100/HR/x3
+    dataroot_lq:  ./datasets/B100/LR/LRBI/x3/
+    io_backend:
+      type: disk
+  test_4: # the 4st test dataset
+    name: Urban100
+    type: PairedImageDataset
+    dataroot_gt:  ./datasets/Urban100/HR/x3/
+    dataroot_lq:  ./datasets/Urban100/LR/LRBI/x3/
+    io_backend:
+      type: disk
+  test_5: # the 5st test dataset
+    name: Manga109
+    type: PairedImageDataset
+    dataroot_gt:  ./datasets/Manga109/HR/x3/
+    dataroot_lq:  ./datasets/Manga109/LR/LRBI/x3/
+    io_backend:
+      type: disk
+
+
+
+# network structures
+
+# network structures
+network_g:
+  type: SRFormer
+  upscale: 3
+  in_chans: 3
+  img_size: 64
+  window_size: 22
+  img_range: 1.0
+  depths: [6, 6, 6, 6, 6, 6]
+  embed_dim: 180
+  num_heads: [6, 6, 6, 6, 6, 6]
+  mlp_ratio: 2
+  upsampler: pixelshuffle
+  resi_connection: 1conv
+
+
+save_img: false
+print_network: false
+
+# path
+path:
+  pretrain_network_g: PretrainModel/SRFormer_SRx3_DF2K.pth
+  strict_load_g: true
+  param_key_g: params
+
+val:
+  save_img: true
+  # 对保存的图片添加后缀，如果是None, 则使用exp name
+  suffix: ~
+
+  # 测试时候使用的metric
+  metrics:
+    # metric的名字, 这个名字可以是任意的
+    psnr:
+      # metric的类型, 一般为在\`basicsr/metrics\`目录下定义的metric函数名
+      type: calculate_psnr
+      crop_border: 3
+      test_y_channel: true
+    # 另外一个metric
+    ssim:
+      type: calculate_ssim
+      crop_border: 3
+      test_y_channel: true
