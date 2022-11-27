@@ -28,7 +28,7 @@ fewer parameters and computations. We hope our simple and effective approach can
 
 
 ## Contents
-1. [Installation](#installation)
+1. [Installation & Dataset](#installation--dataset)
 2. [Training](#Training)
 3. [Testing](#Testing)
 4. [Results](#results)
@@ -36,7 +36,7 @@ fewer parameters and computations. We hope our simple and effective approach can
 5. [Citations](#citations)
 6. [License and Acknowledgement](#License-and-Acknowledgement)
 
-## Installation
+## Installation & Dataset
 - python 3.8
 - pyTorch >= 1.7.0
 
@@ -45,7 +45,7 @@ cd SRFormer
 pip install -r requirements.txt
 python setup.py develop
 ```
-## Dataset
+### Dataset
 We use the same training and testing sets as SwinIR, the following datasets need to be downloaded for training.
 
 | Task                                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Training Set                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Testing Set |
@@ -61,7 +61,7 @@ We use the same training and testing sets as SwinIR, the following datasets need
 
 
 
-1. Please download the dataset corresponding to the task and place them in the folder specified by the training option in folder `options/train/SRFormer`
+1. Please download the dataset corresponding to the task and place them in the folder specified by the training option in folder `/options/train/SRFormer`
 2. Follow the instructions below to  train our SRFormer.
 ```bash
 # train SRFormer for classical SR task
@@ -142,8 +142,8 @@ We provide the results on classical image SR, lightweight image SR, realworld im
 
 ## Pretrain Models
 
-Pretrain Models will be released soon.
-
+Pretrain Models can be download from [google drive](https://drive.google.com/drive/folders/1D5ER_HwYJoyZCcrKVstwE-iEl0hXulwd?usp=sharing).
+To reproduce the results in the article, you can download them and put them in the `/PretrainModel` folder.
 ## Citations
 You may want to cite:
 ```

@@ -65,7 +65,7 @@ print_network: false
 
 # path
 path:
-  pretrain_network_g: PretrainModel/SRFormer_SRx2_DF2K.pth
+  pretrain_network_g: PretrainModel/SRFormerLight_SRx2_DIV2K.pth
   strict_load_g: true
   param_key_g: params
 

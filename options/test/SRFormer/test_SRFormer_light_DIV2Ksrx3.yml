@@ -1,7 +1,7 @@
 name: SRFormer_light_X3
 suffix: ~  # add suffix to saved images
 model_type: SRModel
-scale: 2
+scale: 3
 num_gpu: 2  # set num_gpu: 0 for cpu mode
 manual_seed: 0
 
@@ -66,7 +66,7 @@ print_network: false
 
 # path
 path:
-  pretrain_network_g: PretrainModel/SRFormer_SRx2_DF2K.pth
+  pretrain_network_g: PretrainModel/SRFormerLight_SRx3_DIV2K.pth
   strict_load_g: true
   param_key_g: params
 
