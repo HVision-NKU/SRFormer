@@ -1,5 +1,5 @@
 # SRFormer: Permuted Self-Attention for Single Image Super-Resolution
-Yupeng Zhou <sup>1</sup>, Zhen Li <sup>1</sup>, Chun-Le Guo <sup>1</sup>, Song Bai <sup>2</sup>, Qibin Hou <sup>1</sup>
+Yupeng Zhou <sup>1</sup>, Zhen Li <sup>1</sup>, Chun-Le Guo <sup>1</sup>, Song Bai <sup>2</sup>, Ming-Ming Cheng <sup>1</sup>, Qibin Hou <sup>1</sup>
 
 <sup>1</sup>TMCC, School of Computer Science, Nankai University
 
