@@ -17,6 +17,8 @@ The official PyTorch implementation of SRFormer: Permuted Self-Attention for Sin
 - lightweight image SR
 - real-world image SR
 
+The results can be found [here](#result).
+
 ---
 
 > <b>Abstract</b>: In this paper, we introduce SRFormer, a simple yet effective Transformer-based model for single image super-resolution. We rethink the design of the popular shifted window self-attention, expose and analyze several characteristic issues of it, and present permuted self-attention
@@ -90,11 +92,11 @@ python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml
 ```
 ## Results
-
+<a id="result"></a>
 We provide the results on classical image SR, lightweight image SR, realworld image SR. More results can be found in the [paper](). The visual results of SRFormer will upload to google drive soon.
 
-<details>
-<summary>classical image SR (click to expan)</summary>
+
+Classical image SR 
 
 - Results of Table 4 in the  paper
 
@@ -109,10 +111,10 @@ We provide the results on classical image SR, lightweight image SR, realworld im
 </p>
 
 
-</details>
 
-<details>
-<summary>lightweight image SR (click to expan)</summary>
+
+
+Lightweight image SR 
 
 - Results of Table 5 in the  paper
 
@@ -126,10 +128,20 @@ We provide the results on classical image SR, lightweight image SR, realworld im
   <img width="900" src="figs/lightweightSR_1.png">
 </p>
 
-</details>
 
-<details>
-<summary>realworld image SR (click to expan)</summary>
+
+
+Model size comparison
+
+- Results of Table 1 and Table 2 in the  Supplementary Material
+
+<p align="center">
+  <img width="500" src="figs/model_size.png">
+</p>
+
+
+
+Realworld image SR 
 
 - Results of Figure 8 in the  paper
 
@@ -137,7 +149,7 @@ We provide the results on classical image SR, lightweight image SR, realworld im
   <img width="900" src="figs/realworld.png">
 </p>
 
-</details>
+
 
 
 ## Pretrain Models
