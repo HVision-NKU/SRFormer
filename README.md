@@ -159,7 +159,12 @@ To reproduce the results in the article, you can download them and put them in t
 ## Citations
 You may want to cite:
 ```
-
+@article{zhou2023srformer,
+  title={SRFormer: Permuted Self-Attention for Single Image Super-Resolution},
+  author={Zhou, Yupeng and Li, Zhen and Guo, Chun-Le and Bai, Song and Cheng, Ming-Ming and Hou, Qibin},
+  journal={arXiv preprint arXiv:2303.09735},
+  year={2023}
+}
 ```
 ---
 
