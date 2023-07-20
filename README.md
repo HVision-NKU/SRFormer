@@ -49,7 +49,7 @@ attn = (q @ k.transpose(-2, -1))   # (num_windows*b, num_heads, n, n//4)
 x = (attn @ v).transpose(1, 2).reshape(b_, n, c)   # (num_windows*b,  n, c)
 x = self.proj(x)
 ```
-## Detial Contents
+## Detail Contents
 1. [Installation & Dataset](#installation--dataset)
 2. [Training](#Training)
 3. [Testing](#Testing)
