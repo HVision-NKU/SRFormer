@@ -1,23 +1,32 @@
-# SRFormer: Permuted Self-Attention for Single Image Super-Resolution
-Yupeng Zhou <sup>1</sup>, Zhen Li <sup>1</sup>, Chun-Le Guo <sup>1</sup>, Song Bai <sup>2</sup>, Ming-Ming Cheng <sup>1</sup>, Qibin Hou <sup>1</sup>
+# SRFormer: Permuted Self-Attention for Single Image Super-Resolution (ICCV2023)
+This repository contains the official implementation of the following paper:
+> SRFormer: Permuted Self-Attention for Single Image Super-Resolution <br>
+> Yupeng Zhou <sup>1</sup>, Zhen Li <sup>1</sup>, Chun-Le Guo <sup>1</sup>, Song Bai <sup>2</sup>, Ming-Ming Cheng <sup>1</sup>, Qibin Hou <sup>1</sup>  <br>
+> <sup>1</sup>TMCC, School of Computer Science, Nankai University  <br>
+> <sup>2</sup>ByteDance, Singapore <br>
+> In ICCV 2023 
 
-<sup>1</sup>TMCC, School of Computer Science, Nankai University
+[\[Paper\]](https://arxiv.org/abs/2303.09735) [\[Code\]](https://github.com/HVision-NKU/SRFormer) [\[Pretrained Model\]](#pretrain-models) [Visual Results] [Demo]
 
-<sup>2</sup>ByteDance, Singapore
-
----
-
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)]()
-
-<p align="center"> <img width="1000" src="figs/simple_compare.png"> </p>
-
-The official PyTorch implementation of SRFormer: Permuted Self-Attention for Single Image Super-Resolution
-([arxiv]()). SRFormer achieves **state-of-the-art performance** in
+## Brief Introduction of Our Work
+SRFormer is a new image SR backbone with SOTA performance. The core of SRFormer is **PSA**, a **simple**, **efficient** and **effective** attention mechanism, allowing to build  large range pairwise correlations with even less computational burden than original WSA of SwinIR. 
+SRFormer([arxiv link](https://arxiv.org/abs/2303.09735)) achieves **state-of-the-art performance** in
 - classical image SR
 - lightweight image SR
 - real-world image SR
 
-The results can be found [here](#result).
+
+The table below are performance comparison with SwinIR under same training stragy on DIV2K dataset (X2 SR), SRFormer greatly outperform SwinIR with less Paramaters(10.40M vs 11.75M) and Flops(2741G vs 2868G), More results can be found [here](#result).
+
+| model          | Set5  | Set14  | B100   | Urban100 | Manga109 |
+|----------------|-------|--------|--------|----------|----------|
+| SwinIR         | 38.35 |  34.14 |  32.44 | 33.40    | 39.60    |
+| SRFormer（ours） | 38.45 | 34.21  | 32.51  | 33.86    | 39.69    |
+
+
+## Method Overview
+<!-- <p align="center"> <img width="1000" src="figs/simple_compare.png"> </p> -->
+
 
 ---
 
@@ -25,11 +34,22 @@ The results can be found [here](#result).
 (PSA). PSA strikes an appropriate balance between the channel and spatial information for self-attention, allowing each Transformer block to build pairwise correlations within large windows with even less computational burden.
 Our permuted self-attention is simple and can be easily applied to existing super-resolution networks based on Transformers. Without any bells and whistles, we show that our SRFormer achieves a 33.86dB PSNR score on the Urban100 dataset, which is 0.46dB higher than that of SwinIR but uses
 fewer parameters and computations. We hope our simple and effective approach can serve as a useful tool for future research in super-resolution model design. Our code is publicly available at https://github.com/HVision-NKU/SRFormer.
+<p align="center"> <img width="1000" src="figs/psa.png"> </p>
 
-
-
-
-## Contents
+## Apply our PSA Easily
+You can apply PSA with just a few lines of code, significantly reducing computational complexity.
+```python
+## Original MSA in SwinIR:
+## qkv = self.qkv(x).reshape(B_, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
+#  PSA compress the channel dimension of KV :(num_windows*b, n//4, c):
+kv = self.kv(x).reshape(b_,self.permuted_window_size[0],2,self.permuted_window_size[1],2,2,c//4).permute(0,1,3,5,2,4,6).reshape(b_, n//4, 2,-1).permute(2, 0, 1, 3)
+# PSA keep the channel dimension of Q: (num_windows*b,  n, c)
+q = self.q(x).reshape(b_, n,-1).permute(2, 0, 1)
+attn = (q @ k.transpose(-2, -1))   # (num_windows*b, num_heads, n, n//4)
+x = (attn @ v).transpose(1, 2).reshape(b_, n, c)   # (num_windows*b,  n, c)
+x = self.proj(x)
+```
+## Detial Contents
 1. [Installation & Dataset](#installation--dataset)
 2. [Training](#Training)
 3. [Testing](#Testing)
@@ -154,8 +174,11 @@ Realworld image SR
 
 ## Pretrain Models
 
-Pretrain Models can be download from [google drive](https://drive.google.com/drive/folders/1D5ER_HwYJoyZCcrKVstwE-iEl0hXulwd?usp=sharing).
+Official pretrain models can be download from [google drive](https://drive.google.com/drive/folders/1D5ER_HwYJoyZCcrKVstwE-iEl0hXulwd?usp=sharing).
 To reproduce the results in the article, you can download them and put them in the `/PretrainModel` folder.
+
+Also, we thank @Phhofm for training a third-party pretrain model, you can visit [here](https://github.com/HVision-NKU/SRFormer/issues/10) to learn more.
+
 ## Citations
 You may want to cite:
 ```
