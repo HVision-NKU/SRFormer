@@ -16,7 +16,7 @@ SRFormer([arxiv link](https://arxiv.org/abs/2303.09735)) achieves **state-of-the
 - real-world image SR
 
 
-The table below are performance comparison with SwinIR under same training stragy on DIV2K dataset (X2 SR), SRFormer greatly outperform SwinIR with less Paramaters(10.40M vs 11.75M) and Flops(2741G vs 2868G), More results can be found [here](#result).
+The table below are performance comparison with SwinIR under same training strategy on DIV2K dataset (X2 SR), SRFormer greatly outperform SwinIR with less Paramaters(10.40M vs 11.75M) and Flops(2741G vs 2868G), More results can be found [here](#result).
 
 | model          | Set5  | Set14  | B100   | Urban100 | Manga109 |
 |----------------|-------|--------|--------|----------|----------|
