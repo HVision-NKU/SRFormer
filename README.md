@@ -37,7 +37,7 @@ fewer parameters and computations. We hope our simple and effective approach can
 <p align="center"> <img width="1000" src="figs/psa.png"> </p>
 
 ## Apply our PSA Easily
-You can apply PSA with just a few lines of code, significantly reducing computational complexity.
+You can apply PSA with just a few lines of code, significantly reducing computational complexity. We omit head_number, relative position encoding for simplicity, you can visit [here](https://github.com/HVision-NKU/SRFormer/blob/main/basicsr/archs/srformer_arch.py#L119) to view more detailed code.
 ```python
 ## Original MSA in SwinIR:
 ## qkv = self.qkv(x).reshape(B_, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
@@ -56,7 +56,8 @@ x = self.proj(x)
 4. [Results](#results)
 5. [Pretrain Models](#pretrain-models)
 5. [Citations](#citations)
-6. [License and Acknowledgement](#License-and-Acknowledgement)
+6. [License](#license)
+7. [Acknowledgement](#acknowledgement)
 
 ## Installation & Dataset
 - python 3.8
@@ -191,5 +192,9 @@ You may want to cite:
 ```
 ---
 
-## License and Acknowledgement
-This project is released under the Apache 2.0 license. The codes are based on  [BasicSR](https://github.com/XPixelGroup/BasicSR), [Swin Transformer](https://github.com/microsoft/Swin-Transformer), and [SwinIR](https://github.com/JingyunLiang/SwinIR). Please also follow their licenses. Thanks for their awesome works.
+## License
+This code is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for non-commercial use only.
+Please note that any commercial use of this code requires formal permission prior to use.
+
+## Acknowledgement
+The codes are based on  [BasicSR](https://github.com/XPixelGroup/BasicSR), [Swin Transformer](https://github.com/microsoft/Swin-Transformer), and [SwinIR](https://github.com/JingyunLiang/SwinIR). Please also follow their licenses. Thanks for their awesome works.
