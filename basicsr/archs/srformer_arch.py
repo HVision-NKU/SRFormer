@@ -317,10 +317,10 @@ class PSA_Block(nn.Module):
         h, w = x_size
         permuted_window_mask = torch.zeros((1, h // 2, w // 2, 1))  # 1 h w 1
         h_slices = (slice(0, -self.permuted_window_size), slice(-self.permuted_window_size,
-                                                            -self.shift_size), slice(-self.shift_size, None))
+                                                            -self.shift_size // 2), slice(-self.shift_size // 2, None))
         w_slices = (slice(0, -self.permuted_window_size), slice(-self.permuted_window_size,
-                                                            -self.permuted_window_size),
-                    slice(-self.permuted_window_size, None))
+                                                            -self.shift_size // 2),
+                    slice(-self.shift_size // 2, None))
         cnt = 0
         for h in h_slices:
             for w in w_slices:
