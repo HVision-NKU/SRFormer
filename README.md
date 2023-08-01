@@ -79,7 +79,7 @@ We use the same training and testing sets as SwinIR, the following datasets need
 
 #### Please note in Datasets Preparation
 * If you do not use lmdb datasets, you may need to crop the training images into sub_images for reducing I/O times. Please follow [here](https://github.com/XPixelGroup/BasicSR/blob/master/docs/DatasetPreparation.md#DIV2K).
-* After downloading the test datasets you need, you maybe need to get the downsample LR image, Please follow [here](https://github.com/XPixelGroup/BasicSR/blob/master/docs/DatasetPreparation.md#DIV2K).
+* After downloading the test datasets you need, you maybe need to get the downsample LR image, Please follow [here](https://github.com/yulunzhang/RCAN#the-whole-test-pipeline).
 * Our Code requires the HR image and the corresponding LR image to have the same name. (e.g 001_HR.img and 001_LR.img is invalid. Please rename both of them to 001.img and save them in HR dir and LR dir specified in config.) Use `rename` command of linux can easily do it.
 
 
