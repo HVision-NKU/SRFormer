@@ -53,11 +53,12 @@ x = self.proj(x)
 1. [Installation & Dataset](#installation--dataset)
 2. [Training](#Training)
 3. [Testing](#Testing)
-4. [Results](#results)
-5. [Pretrain Models](#pretrain-models)
-5. [Citations](#citations)
-6. [License](#license)
-7. [Acknowledgement](#acknowledgement)
+4. [Upscaling your own pictutres](#inferring-your-own-lr-pictures)
+5. [Results](#results)
+6. [Pretrain Models](#pretrain-models)
+7. [Citations](#citations)
+8. [License](#license)
+9. [Acknowledgement](#acknowledgement)
 
 ## Installation & Dataset
 - python 3.8
@@ -120,6 +121,22 @@ python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml
 ```
+
+## Inferring your own LR pictures
+
+We provide a script which you can use our pretrained models to upscale your own pictures. We will also release our realworld pretrained models soon.  
+
+```bash
+# use SRFormer for classical SR task
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx2.yml  --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+# use SRFormer for lightweight SR task
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+```
+
 ## Results
 <a id="result"></a>
 We provide the results on classical image SR, lightweight image SR, realworld image SR. More results can be found in the [paper](). The visual results of SRFormer can be found in [\[Visual Results\]](https://drive.google.com/drive/folders/1t_yvM5jRJn-YTz-po5tGj3xITItLbeCl?usp=sharing).
