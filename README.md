@@ -128,13 +128,13 @@ We provide a script which you can use our pretrained models to upscale your own 
 
 ```bash
 # use SRFormer for classical SR task
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx2.yml  --input_dir {dir of your pictures} --output_dir {dir of ourput}
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx2.yml  --input_dir {dir of your pictures} --output_dir {dir of output}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of output}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of output}
 # use SRFormer for lightweight SR task
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
-python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of ourput}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml --input_dir {dir of your pictures} --output_dir {dir of output}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of output}
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of output}
 ```
 
 ## Results
