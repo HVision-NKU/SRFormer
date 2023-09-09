@@ -95,6 +95,9 @@ We use the same training and testing sets as SwinIR, the following datasets need
 
 1. Please download the dataset corresponding to the task and place them in the folder specified by the training option in folder `/options/train/SRFormer`
 2. Follow the instructions below to  train our SRFormer.
+
+**Please note:** "4" in the following instructions means four GPUs. Please modify it according to your configuration. You are also encouraged to modify the YAML file in  "options/train/SRFormer/" to set more training settings.
+
 ```bash
 # train SRFormer for classical SR task
 ./scripts/dist_train.sh 4 options/train/SRFormer/train_SRFormer_SRx2_scratch.yml
