@@ -6,11 +6,11 @@ This repository contains the official implementation of the following paper:
 > <sup>2</sup>ByteDance, Singapore <br>
 > In ICCV 2023 
 
-[\[Paper\]](https://arxiv.org/abs/2303.09735) [\[Code\]](https://github.com/HVision-NKU/SRFormer) [\[Pretrained Model\]](#pretrain-models) [\[Visual Results\]](https://drive.google.com/drive/folders/1t_yvM5jRJn-YTz-po5tGj3xITItLbeCl?usp=sharing) [Demo]
+[\[Paper\]](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_SRFormer_Permuted_Self-Attention_for_Single_Image_Super-Resolution_ICCV_2023_paper.pdf) [\[Code\]](https://github.com/HVision-NKU/SRFormer) [\[Pretrained Model\]](#pretrain-models) [\[Visual Results\]](https://drive.google.com/drive/folders/1t_yvM5jRJn-YTz-po5tGj3xITItLbeCl?usp=sharing) [Demo]
 
 ## Brief Introduction of Our Work
 SRFormer is a new image SR backbone with SOTA performance. The core of SRFormer is **PSA**, a **simple**, **efficient** and **effective** attention mechanism, allowing to build  large range pairwise correlations with even less computational burden than original WSA of SwinIR. 
-SRFormer([arxiv link](https://arxiv.org/abs/2303.09735)) achieves **state-of-the-art performance** in
+SRFormer ([ICCV open access link](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_SRFormer_Permuted_Self-Attention_for_Single_Image_Super-Resolution_ICCV_2023_paper.pdf)) achieves **state-of-the-art performance** in
 - classical image SR
 - lightweight image SR
 - real-world image SR
