@@ -8,6 +8,8 @@ This repository contains the official implementation of the following paper:
 
 [\[Paper\]](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_SRFormer_Permuted_Self-Attention_for_Single_Image_Super-Resolution_ICCV_2023_paper.pdf) [\[Code\]](https://github.com/HVision-NKU/SRFormer) [\[Pretrained Model\]](#pretrain-models) [\[Visual Results\]](https://drive.google.com/drive/folders/1t_yvM5jRJn-YTz-po5tGj3xITItLbeCl?usp=sharing) [Demo]
 
+## Update Explanation
+We have uploaded a [realworld super-resolution model](#pretrain-models), which is trained based on real-esrgan. We may update the weights of the model in the future.
 ## Brief Introduction of Our Work
 SRFormer is a new image SR backbone with SOTA performance. The core of SRFormer is **PSA**, a **simple**, **efficient** and **effective** attention mechanism, allowing to build  large range pairwise correlations with even less computational burden than original WSA of SwinIR. 
 SRFormer ([ICCV open access link](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_SRFormer_Permuted_Self-Attention_for_Single_Image_Super-Resolution_ICCV_2023_paper.pdf)) achieves **state-of-the-art performance** in
@@ -123,6 +125,8 @@ python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml
 python basicsr/test.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml
+# test SRFormer for realworld SR task
+python basicsr/test.py -opt options/test/SRFormer/test_SRFormer-S_x4_real.yml
 ```
 
 ## Inferring your own LR pictures
@@ -138,6 +142,8 @@ python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_DF2Ksrx4.yml
 python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx2.yml --input_dir {dir of your pictures} --output_dir {dir of output}
 python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx3.yml --input_dir {dir of your pictures} --output_dir {dir of output}
 python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer_light_DIV2Ksrx4.yml --input_dir {dir of your pictures} --output_dir {dir of output}
+# use SRFormer for realworld SR task
+python basicsr/infer_sr.py -opt options/test/SRFormer/test_SRFormer-S_x4_real.yml --input_dir {dir of your pictures} --output_dir {dir of output}
 ```
 
 ## Results
