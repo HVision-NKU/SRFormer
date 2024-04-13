@@ -66,7 +66,7 @@ print_network: false
 # path
 path:
   pretrain_network_g: PretrainModel/SRFormer_S_RealSR.pth
-  strict_load_g: true
+  strict_load_g: false
   param_key_g: params_ema
 
 val:
