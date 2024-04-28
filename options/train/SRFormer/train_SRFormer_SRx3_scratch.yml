@@ -38,7 +38,7 @@ datasets:
 
 # network structures
 network_g:
-  type: SwinIR_bw8mlp5
+  type: SRFormer
   upscale: 3
   in_chans: 3
   img_size: 48
