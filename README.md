@@ -217,10 +217,11 @@ Also, we thank @Phhofm for training a third-party pretrain model, you can visit 
 ## Citations
 You may want to cite:
 ```
-@article{zhou2023srformer,
-  title={SRFormer: Permuted Self-Attention for Single Image Super-Resolution},
+@inproceedings{zhou2023srformer,
+  title={Srformer: Permuted self-attention for single image super-resolution},
   author={Zhou, Yupeng and Li, Zhen and Guo, Chun-Le and Bai, Song and Cheng, Ming-Ming and Hou, Qibin},
-  journal={arXiv preprint arXiv:2303.09735},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={12780--12791},
   year={2023}
 }
 ```
