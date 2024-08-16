@@ -224,6 +224,12 @@ You may want to cite:
   pages={12780--12791},
   year={2023}
 }
+@article{zhou2024srformerv2,
+      title={SRFormerV2: Taking a Closer Look at Permuted Self-Attention for Image Super-Resolution}, 
+      author={Yupeng Zhou and Zhen Li and Chun-Le Guo and Li Liu and Ming-Ming Cheng and Qibin Hou},
+      year={2024},
+      journal={arXiv:2303.09735}
+}
 ```
 ---
 
