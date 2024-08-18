@@ -1,4 +1,5 @@
-# SRFormer: Permuted Self-Attention for Single Image Super-Resolution (ICCV2023)
+## SRFormer: Permuted Self-Attention for Single Image Super-Resolution (ICCV2023)
+## SRFormerV2: Taking a Closer Look at Permuted Self-Attention for Image Super-Resolution
 This repository contains the official implementation of the following paper:
 > SRFormer: Permuted Self-Attention for Single Image Super-Resolution <br>
 > Yupeng Zhou <sup>1</sup>, Zhen Li <sup>1</sup>, Chun-Le Guo <sup>1</sup>, Song Bai <sup>2</sup>, Ming-Ming Cheng <sup>1</sup>, Qibin Hou <sup>1</sup>  <br>
@@ -7,6 +8,8 @@ This repository contains the official implementation of the following paper:
 > In ICCV 2023 
 
 [\[Paper\]](https://openaccess.thecvf.com/content/ICCV2023/papers/Zhou_SRFormer_Permuted_Self-Attention_for_Single_Image_Super-Resolution_ICCV_2023_paper.pdf) [\[Code\]](https://github.com/HVision-NKU/SRFormer) [\[Pretrained Model\]](#pretrain-models) [\[Visual Results\]](https://drive.google.com/drive/folders/1t_yvM5jRJn-YTz-po5tGj3xITItLbeCl?usp=sharing) [Demo]
+
+Our [SRFormerV2](https://z-yupeng.github.io/SRFormer/) is available now, which is larger, stronger, and better.
 
 ## Update Explanation
 We have uploaded a [realworld super-resolution model](#pretrain-models), which is trained based on real-esrgan. We may update the weights of the model in the future.
@@ -224,11 +227,14 @@ You may want to cite:
   pages={12780--12791},
   year={2023}
 }
-@article{zhou2024srformerv2,
+@misc{zhou2024srformerv2takingcloserlook,
       title={SRFormerV2: Taking a Closer Look at Permuted Self-Attention for Image Super-Resolution}, 
       author={Yupeng Zhou and Zhen Li and Chun-Le Guo and Li Liu and Ming-Ming Cheng and Qibin Hou},
       year={2024},
-      journal={arXiv:2303.09735}
+      eprint={2303.09735},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2303.09735}, 
 }
 ```
 ---
