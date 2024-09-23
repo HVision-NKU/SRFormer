@@ -4,8 +4,8 @@ import torch
 from os import path as osp
 from torch.nn import functional as F
 
-from basicsr.data.transforms import mod_crop
-from basicsr.utils import img2tensor, scandir
+from SRFormer.basicsr.data.transforms import mod_crop
+from SRFormer.basicsr.utils import img2tensor, scandir
 
 
 def read_img_seq(path, require_mod_crop=False, scale=1, return_imgname=False):
